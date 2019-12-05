@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -46,5 +47,6 @@
         <Label layoutX="416.0" layoutY="113.0" text="µg/L" />
       </children>
     </AnchorPane>
+      <JFXButton layoutX="614.0" layoutY="107.0" />
   </children>
 </AnchorPane>
