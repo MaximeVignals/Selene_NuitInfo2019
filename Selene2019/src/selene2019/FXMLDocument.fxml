@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="selene2019.FXMLDocumentController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="selene2019.FXMLDocumentController">
+  <children>
+    <Label alignment="CENTER" layoutX="574.0" layoutY="14.0" prefHeight="56.0" prefWidth="132.0" text="Selene" textAlignment="CENTER">
+      <font>
+        <Font name="System Bold" size="40.0" />
+      </font>
+    </Label>
+    <Label fx:id="labelDate" layoutX="64.0" layoutY="25.0" prefWidth="217.0" text="December 5 - 2019">
+      <font>
+        <Font size="25.0" fx:id="x2" />
+      </font>
+    </Label>
+    <AnchorPane layoutX="7.0" layoutY="107.0" prefHeight="200.0" prefWidth="500.0">
+      <children>
+        <Label alignment="CENTER" layoutX="38.0" layoutY="14.0" prefHeight="67.0" prefWidth="100.0" text="CO2">
+          <font>
+            <Font size="35.0" fx:id="x1" />
+          </font>
+        </Label>
+        <Label alignment="CENTER" font="$x1" layoutX="198.0" layoutY="14.0" prefHeight="67.0" prefWidth="100.0" text="O2" />
+        <Label alignment="CENTER" font="$x1" layoutX="358.0" layoutY="14.0" prefHeight="67.0" prefWidth="100.0" text="N2" />
+        <Label id="label_O2" fx:id="label_CO2" alignment="CENTER" font="$x2" layoutX="55.0" layoutY="88.0" prefHeight="55.0" prefWidth="66.0" text="0" />
+        <Label fx:id="label_N2" alignment="CENTER" font="$x2" layoutX="375.0" layoutY="88.0" prefHeight="55.0" prefWidth="66.0" text="0" />
+        <Label fx:id="label_O2" alignment="CENTER" font="$x2" layoutX="215.0" layoutY="88.0" prefHeight="55.0" prefWidth="66.0" text="0" />
+        <Label layoutX="121.0" layoutY="115.0" text="\%" />
+        <Label layoutX="292.0" layoutY="115.0" text="\%" />
+        <Label layoutX="452.0" layoutY="115.0" text="\%" />
+      </children>
+    </AnchorPane>
+    <AnchorPane layoutX="780.0" layoutY="107.0" prefHeight="200.0" prefWidth="500.0">
+      <children>
+        <Label alignment="CENTER" font="$x1" layoutX="25.0" layoutY="14.0" prefHeight="67.0" prefWidth="100.0" text="Ca" />
+        <Label alignment="CENTER" font="$x1" layoutX="190.0" layoutY="14.0" prefHeight="67.0" prefWidth="120.0" text="HCO3+" />
+        <Label alignment="CENTER" font="$x1" layoutX="316.0" layoutY="14.0" prefHeight="67.0" prefWidth="158.0" text="Metals" />
+        <Label id="label_O2" fx:id="label_Ca" alignment="CENTER" font="$x2" layoutX="28.0" layoutY="88.0" prefHeight="55.0" prefWidth="66.0" text="0" />
+        <Label id="label_N2" fx:id="label_Metals" alignment="CENTER" font="$x2" layoutX="350.0" layoutY="91.0" prefHeight="55.0" prefWidth="66.0" text="0" />
+        <Label id="label_O2" fx:id="label_HCO3" alignment="CENTER" font="$x2" layoutX="188.0" layoutY="91.0" prefHeight="55.0" prefWidth="66.0" text="0" />
+        <Label layoutX="94.0" layoutY="110.0" text="mg/L" />
+        <Label layoutX="254.0" layoutY="113.0" text="mg/L" />
+        <Label layoutX="416.0" layoutY="113.0" text="µg/L" />
+      </children>
+    </AnchorPane>
+  </children>
 </AnchorPane>
