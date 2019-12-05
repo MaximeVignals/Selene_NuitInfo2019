@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToggleButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -12,7 +12,7 @@
         <Font name="System Bold" size="40.0" />
       </font>
     </Label>
-    <Label fx:id="labelDate" layoutX="64.0" layoutY="25.0" prefWidth="217.0" text="December 5 - 2019">
+    <Label fx:id="labelDate" layoutX="64.0" layoutY="25.0" prefHeight="36.0" prefWidth="305.0" text="December 5 - 2019">
       <font>
         <Font size="25.0" fx:id="x2" />
       </font>
@@ -47,6 +47,8 @@
         <Label layoutX="416.0" layoutY="113.0" text="µg/L" />
       </children>
     </AnchorPane>
-      <JFXButton layoutX="614.0" layoutY="107.0" />
+      <JFXToggleButton fx:id="toggle_Air" layoutX="549.0" layoutY="78.0" prefHeight="58.0" prefWidth="170.0" text="Air Purification" textAlignment="RIGHT" />
+      <JFXToggleButton fx:id="toggle_Water" layoutX="556.0" layoutY="136.0" prefWidth="170.0" text="Water Purification" textAlignment="RIGHT" />
+      <JFXToggleButton fx:id="toggle_Food" layoutX="554.0" layoutY="194.0" prefHeight="58.0" prefWidth="170.0" text="Food Purification" />
   </children>
 </AnchorPane>
