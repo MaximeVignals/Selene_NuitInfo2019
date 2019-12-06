@@ -26,9 +26,18 @@
         </Label>
         <Label alignment="CENTER" font="$x1" layoutX="198.0" layoutY="14.0" prefHeight="67.0" prefWidth="100.0" text="O2" />
         <Label alignment="CENTER" font="$x1" layoutX="358.0" layoutY="14.0" prefHeight="67.0" prefWidth="100.0" text="N2" />
-        <Label id="label_O2" fx:id="label_CO2" alignment="CENTER" font="$x2" layoutX="55.0" layoutY="88.0" prefHeight="55.0" prefWidth="66.0" text="0" />
-        <Label fx:id="label_N2" alignment="CENTER" font="$x2" layoutX="375.0" layoutY="88.0" prefHeight="55.0" prefWidth="66.0" text="0" />
-        <Label fx:id="label_O2" alignment="CENTER" font="$x2" layoutX="215.0" layoutY="88.0" prefHeight="55.0" prefWidth="66.0" text="0" />
+        <Label id="label_O2" fx:id="label_CO2" alignment="CENTER" layoutX="55.0" layoutY="88.0" prefHeight="55.0" prefWidth="66.0" text="0">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+        <Label fx:id="label_N2" alignment="CENTER" layoutX="375.0" layoutY="88.0" prefHeight="55.0" prefWidth="66.0" text="0">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+        <Label fx:id="label_O2" alignment="CENTER" layoutX="215.0" layoutY="88.0" prefHeight="55.0" prefWidth="66.0" text="0">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
         <Label layoutX="121.0" layoutY="115.0" text="\%" />
         <Label layoutX="292.0" layoutY="115.0" text="\%" />
         <Label layoutX="452.0" layoutY="115.0" text="\%" />
@@ -39,16 +48,25 @@
         <Label alignment="CENTER" font="$x1" layoutX="25.0" layoutY="14.0" prefHeight="67.0" prefWidth="100.0" text="Ca" />
         <Label alignment="CENTER" font="$x1" layoutX="190.0" layoutY="14.0" prefHeight="67.0" prefWidth="120.0" text="HCO3+" />
         <Label alignment="CENTER" font="$x1" layoutX="316.0" layoutY="14.0" prefHeight="67.0" prefWidth="158.0" text="Metals" />
-        <Label id="label_O2" fx:id="label_Ca" alignment="CENTER" font="$x2" layoutX="28.0" layoutY="88.0" prefHeight="55.0" prefWidth="66.0" text="0" />
-        <Label id="label_N2" fx:id="label_Metals" alignment="CENTER" font="$x2" layoutX="350.0" layoutY="91.0" prefHeight="55.0" prefWidth="66.0" text="0" />
-        <Label id="label_O2" fx:id="label_HCO3" alignment="CENTER" font="$x2" layoutX="188.0" layoutY="91.0" prefHeight="55.0" prefWidth="66.0" text="0" />
-        <Label layoutX="94.0" layoutY="110.0" text="mg/L" />
-        <Label layoutX="254.0" layoutY="113.0" text="mg/L" />
-        <Label layoutX="416.0" layoutY="113.0" text="µg/L" />
+        <Label id="label_O2" fx:id="label_Ca" alignment="CENTER" layoutX="28.0" layoutY="88.0" prefHeight="55.0" prefWidth="82.0" text="0">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+        <Label id="label_N2" fx:id="label_Metals" alignment="CENTER" layoutX="350.0" layoutY="91.0" prefHeight="55.0" prefWidth="82.0" text="0">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+        <Label id="label_O2" fx:id="label_HCO3" alignment="CENTER" layoutX="188.0" layoutY="91.0" prefHeight="55.0" prefWidth="82.0" text="0">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+        <Label layoutX="111.0" layoutY="107.0" prefHeight="18.0" text="mg/L" />
+        <Label layoutX="270.0" layoutY="107.0" prefHeight="18.0" text="mg/L" />
+        <Label layoutX="432.0" layoutY="107.0" prefHeight="18.0" prefWidth="41.0" text="µg/L" />
       </children>
     </AnchorPane>
-      <JFXToggleButton fx:id="toggle_Air" layoutX="549.0" layoutY="78.0" prefHeight="58.0" prefWidth="170.0" text="Air Purification" textAlignment="RIGHT" />
-      <JFXToggleButton fx:id="toggle_Water" layoutX="556.0" layoutY="136.0" prefWidth="170.0" text="Water Purification" textAlignment="RIGHT" />
-      <JFXToggleButton fx:id="toggle_Food" layoutX="554.0" layoutY="194.0" prefHeight="58.0" prefWidth="170.0" text="Food Purification" />
+      <JFXToggleButton fx:id="toggle_Air" layoutX="537.0" layoutY="78.0" prefHeight="58.0" prefWidth="206.0" text="Air Purification" textAlignment="RIGHT" />
+      <JFXToggleButton fx:id="toggle_Water" layoutX="546.0" layoutY="136.0" prefHeight="58.0" prefWidth="206.0" text="Water Purification" textAlignment="RIGHT" />
+      <JFXToggleButton fx:id="toggle_Food" layoutX="537.0" layoutY="194.0" prefHeight="58.0" prefWidth="206.0" text="Food Purification" />
   </children>
 </AnchorPane>

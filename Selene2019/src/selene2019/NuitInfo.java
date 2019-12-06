@@ -19,12 +19,16 @@ public class NuitInfo extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
+        FXMLDocumentController ctrl = loader.getController();
         
+        Parent root = loader.load();
         Scene scene = new Scene(root);
-        
+                
+        ctrl.serviceStart();
         stage.setScene(scene);
         stage.show();
+
     }
 
     public static void main(String[] args) {
