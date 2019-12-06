@@ -65,7 +65,7 @@
         <Label layoutX="432.0" layoutY="107.0" prefHeight="18.0" prefWidth="41.0" text="µg/L" />
       </children>
     </AnchorPane>
-      <JFXToggleButton fx:id="toggle_Air" layoutX="154.0" layoutY="305.0" onAction="#toggleAirCleaning" prefHeight="58.0" prefWidth="206.0" text="Air Purification" textAlignment="RIGHT" />
+      <JFXToggleButton fx:id="toggle_Air" layoutX="154.0" layoutY="305.0" onAction="#toggleAirCleaning" prefHeight="46.0" prefWidth="206.0" text="Air Purification" textAlignment="RIGHT" />
       <JFXToggleButton fx:id="toggle_Water" layoutX="536.0" layoutY="305.0" onAction="#toggleWaterCleaning" prefHeight="58.0" prefWidth="206.0" text="Water Purification" textAlignment="RIGHT" />
       <JFXToggleButton fx:id="toggle_Food" layoutX="888.0" layoutY="305.0" onAction="#toggleFoodCleaning" prefHeight="58.0" prefWidth="206.0" text="Food Purification" />
       <Label alignment="CENTER" layoutX="185.0" layoutY="360.0" prefHeight="47.0" prefWidth="144.0" text="Pneumophila">
@@ -144,5 +144,11 @@
             <Font size="31.0" />
          </font>
       </Label>
+      <Label fx:id="label_News_title" alignment="CENTER" layoutX="88.0" layoutY="466.0" prefHeight="46.0" prefWidth="416.0" stylesheets="@style.css" text="Breaking News" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_News_text" alignment="TOP_LEFT" layoutX="46.0" layoutY="525.0" prefHeight="125.0" prefWidth="500.0" stylesheets="@style.css" text="Breaking" textFill="WHITE" wrapText="true" />
   </children>
 </AnchorPane>

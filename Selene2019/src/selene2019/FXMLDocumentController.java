@@ -46,7 +46,8 @@ import javax.ws.rs.core.Response;
 public class FXMLDocumentController implements Initializable {
     
     
-    String strDate, Calcium, Bicarbonate, Metals, Carbon_dioxide, Dioxygen, Dinitrogen, cholerea, ecoli_water, pneumophila, salmonella, ecoli_food, listeria ;
+    String strDate, Calcium, Bicarbonate, Metals, Carbon_dioxide, Dioxygen, Dinitrogen, cholerea, ecoli_water, pneumophila, salmonella, ecoli_food, listeria, news_title, news_text, criticality ;
+    
     
     @FXML
     private Label labelDate;
@@ -82,7 +83,12 @@ public class FXMLDocumentController implements Initializable {
     private Label label_Salmonella;
     @FXML
     private Label label_Ecoli_Water;
-    
+    @FXML
+    private Label label_Ecoli_Food;
+    @FXML
+    private Label label_News_title;
+    @FXML
+    private Label label_News_text;
   
     //AnimationTimer permettant de refresh les données toutes les "delay" secondes
     AnimationTimer service = new AnimationTimer() {
@@ -116,8 +122,6 @@ public class FXMLDocumentController implements Initializable {
             }
         }
     };
-    @FXML
-    private Label label_Ecoli_Food;
 
     
     @Override
@@ -142,7 +146,21 @@ public class FXMLDocumentController implements Initializable {
                      label_Listeria.setText(listeria);
                      label_Salmonella.setText(salmonella);
                      label_Ecoli_Water.setText(ecoli_water);
-                     label_Ecoli_Food.setText(ecoli_food);
+                     label_Ecoli_Food.setText(ecoli_food);      
+                     label_News_title.setText(news_title);
+                     label_News_text.setText(news_text);
+                     
+                     switch(criticality){
+                        case "low":
+                           label_News_title.setTextFill(Color.web("#FFFFFF"));
+                           break;
+                        case "medium":
+                            label_News_title.setTextFill(Color.web("#FFFF00"));
+                            break;
+                        case "high":
+                            label_News_title.setTextFill(Color.web("#FF0000"));
+                            break;
+                     };
                      
                  } catch (IOException ex) {
                      Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
@@ -167,10 +185,19 @@ public class FXMLDocumentController implements Initializable {
         String day = date.get("dayOfMonth").getAsString();
         String year = date.get("year").getAsString();
         strDate = month + " " + day + " - " + year;
+        
+        JsonObject news = JSONdata.get("breaking news").getAsJsonObject();
+        
+        news_title = news.get("title").getAsString();
+        news_text = news.get("description").getAsString();
+        criticality = news.get("criticality").getAsString();
+        
 
         //Get the data array from the JSON
         JsonArray data = JSONdata.get("data").getAsJsonArray();
 
+        
+        
         //Get water information from the JSON and update the GUI
         Calcium = data.get(0).getAsJsonObject().get("value").getAsString().substring(0, 6);
         Bicarbonate = data.get(3).getAsJsonObject().get("value").getAsString().substring(0, 6);
@@ -212,7 +239,6 @@ public class FXMLDocumentController implements Initializable {
                 if(!toggle_Water.isSelected()){
                     toggle_Water.fire();
                 }
-
             }
         }else{
             label_Cholerea.setTextFill(Color.web("#FFFFFF"));
