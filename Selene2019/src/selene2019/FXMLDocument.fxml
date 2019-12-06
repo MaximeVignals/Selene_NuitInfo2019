@@ -17,7 +17,7 @@
         <Font size="25.0" fx:id="x2" />
       </font>
     </Label>
-    <AnchorPane layoutX="7.0" layoutY="107.0" prefHeight="200.0" prefWidth="500.0">
+    <AnchorPane layoutX="7.0" layoutY="107.0" prefHeight="154.0" prefWidth="500.0">
       <children>
         <Label alignment="CENTER" layoutX="38.0" layoutY="14.0" prefHeight="67.0" prefWidth="100.0" text="CO2">
           <font>
@@ -65,8 +65,74 @@
         <Label layoutX="432.0" layoutY="107.0" prefHeight="18.0" prefWidth="41.0" text="µg/L" />
       </children>
     </AnchorPane>
-      <JFXToggleButton fx:id="toggle_Air" layoutX="537.0" layoutY="78.0" prefHeight="58.0" prefWidth="206.0" text="Air Purification" textAlignment="RIGHT" />
-      <JFXToggleButton fx:id="toggle_Water" layoutX="546.0" layoutY="136.0" prefHeight="58.0" prefWidth="206.0" text="Water Purification" textAlignment="RIGHT" />
-      <JFXToggleButton fx:id="toggle_Food" layoutX="537.0" layoutY="194.0" prefHeight="58.0" prefWidth="206.0" text="Food Purification" />
+      <JFXToggleButton fx:id="toggle_Air" layoutX="154.0" layoutY="305.0" onAction="#toggleAirCleaning" prefHeight="58.0" prefWidth="206.0" text="Air Purification" textAlignment="RIGHT" />
+      <JFXToggleButton fx:id="toggle_Water" layoutX="536.0" layoutY="305.0" onAction="#toggleWaterCleaning" prefHeight="58.0" prefWidth="206.0" text="Water Purification" textAlignment="RIGHT" />
+      <JFXToggleButton fx:id="toggle_Food" layoutX="888.0" layoutY="305.0" onAction="#toggleFoodCleaning" prefHeight="58.0" prefWidth="206.0" text="Food Purification" />
+      <Label alignment="CENTER" layoutX="185.0" layoutY="360.0" prefHeight="47.0" prefWidth="144.0" text="Pneumophila">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="329.0" layoutY="404.0" prefHeight="18.0" prefWidth="52.0" text="UFC/L" />
+      <Label fx:id="label_Pneumophila" alignment="CENTER" layoutX="197.0" layoutY="400.0" prefHeight="27.0" prefWidth="120.0" text="0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="567.0" layoutY="360.0" prefHeight="47.0" prefWidth="144.0" text="Cholerea">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="698.0" layoutY="404.0" prefHeight="18.0" prefWidth="42.0" text="UFC/L" />
+      <Label fx:id="label_Cholerea" alignment="CENTER" layoutX="578.0" layoutY="400.0" prefHeight="27.0" prefWidth="120.0" text="0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="919.0" layoutY="360.0" prefHeight="47.0" prefWidth="144.0" text="Listeria">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="1051.0" layoutY="404.0" prefHeight="18.0" prefWidth="40.0" text="UFC/L" />
+      <Label fx:id="label_Listeria" alignment="CENTER" layoutX="931.0" layoutY="400.0" prefHeight="27.0" prefWidth="120.0" text="0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="919.0" layoutY="431.0" prefHeight="47.0" prefWidth="144.0" text="Salmonella">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="1051.0" layoutY="478.0" prefHeight="18.0" prefWidth="40.0" text="UFC/L" />
+      <Label fx:id="label_Salmonella" alignment="CENTER" layoutX="931.0" layoutY="474.0" prefHeight="27.0" prefWidth="120.0" text="0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="566.0" layoutY="431.0" prefHeight="47.0" prefWidth="144.0" text="E-Coli (water)">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="693.0" layoutY="480.0" prefHeight="18.0" prefWidth="52.0" text="UFC/L" />
+      <Label fx:id="label_Ecoli_Water" alignment="CENTER" layoutX="578.0" layoutY="474.0" prefHeight="27.0" prefWidth="120.0" text="0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="919.0" layoutY="501.0" prefHeight="47.0" prefWidth="144.0" text="E-Coli (Food)">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="1051.0" layoutY="548.0" prefHeight="18.0" prefWidth="40.0" text="UFC/L" />
+      <Label fx:id="label_Ecoli_Food" alignment="CENTER" layoutX="931.0" layoutY="544.0" prefHeight="27.0" prefWidth="120.0" text="0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
   </children>
 </AnchorPane>
