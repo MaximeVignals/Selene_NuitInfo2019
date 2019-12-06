@@ -205,17 +205,17 @@ public class FXMLDocumentController implements Initializable {
         
         //Vérification de la quantité de cholerea
         if(tab[0]>0.08){
-            label_Cholerea.setStyle("-fx-border-color:black; -fx-background-color: yellow;");
+            label_Cholerea.setTextFill(Color.web("#FFFF00"));
             if(tab[0]>0.09){
+                label_Cholerea.setTextFill(Color.web("#FF0000"));
                 System.out.println("Quantité de Vibrio Cholerea dans l'eau critique");
-                label_Cholerea.setStyle("-fx-border-color:black; -fx-background-color: red;");
                 if(!toggle_Water.isSelected()){
                     toggle_Water.fire();
                 }
 
             }
         }else{
-            label_Cholerea.setStyle("-fx-border-color:white; -fx-background-color: white;");
+            label_Cholerea.setTextFill(Color.web("#FFFFFF"));
             if(toggle_Water.isSelected()){
                 toggle_Water.fire();
             }
@@ -224,17 +224,16 @@ public class FXMLDocumentController implements Initializable {
         
         //Vérification de la quantité de E-Coli dans l'eau
         if(tab[1]>8.0){
-            label_Ecoli_Water.setStyle("-fx-border-color:black; -fx-background-color: yellow;");
+            label_Ecoli_Water.setTextFill(Color.web("#FFFF00"));
             if(tab[1]>9.0){
-                label_Ecoli_Water.setStyle("-fx-border-color:black; -fx-background-color: red;");
+                label_Ecoli_Water.setTextFill(Color.web("#FF0000"));
                 System.out.println("Quantité de Escherichia Coli dans l'eau critique");
                 if(!toggle_Water.isSelected()){
-                    
                     toggle_Water.fire();
                 }
             }
         }else{
-            label_Ecoli_Water.setStyle("-fx-border-color:white; -fx-background-color: white;");
+            label_Ecoli_Water.setTextFill(Color.web("#FFFFFF"));
             if(toggle_Water.isSelected()){
                 toggle_Water.fire();
             }
@@ -242,16 +241,16 @@ public class FXMLDocumentController implements Initializable {
         
         //Vérificaiton de la quantité de E-Coli dans la nourriture
         if(tab[2]>40.0){
-            label_Ecoli_Food.setStyle("-fx-border-color:black; -fx-background-color: yellow;");
+            label_Ecoli_Food.setTextFill(Color.web("#FFFF00"));
             if(tab[2]>45.0){
+                label_Ecoli_Food.setTextFill(Color.web("#FF0000"));
                 System.out.println("Quantité de Escherichia Coli dans la nourriture critique");
-                label_Ecoli_Food.setStyle("-fx-border-color:black; -fx-background-color: red;");
                 if(!toggle_Food.isSelected()){
                     toggle_Food.fire();
                 }
             }
         }else{
-            label_Ecoli_Food.setStyle("-fx-border-color:white; -fx-background-color: white;");
+            label_Ecoli_Food.setTextFill(Color.web("#FFFFFF"));
             if(toggle_Food.isSelected()){
                 toggle_Food.fire();
             }
@@ -259,16 +258,16 @@ public class FXMLDocumentController implements Initializable {
         
         //Vérificaiton de la quantité de Pneumophila dans l'air
         if(tab[3]>70.0){
-            label_Pneumophila.setStyle("-fx-border-color:black; -fx-background-color: yellow;");
+            label_Pneumophila.setTextFill(Color.web("#FFFF00"));
             if(tab[3]>75.0){
-                label_Pneumophila.setStyle("-fx-border-color:black; -fx-background-color: red;");
+                label_Pneumophila.setTextFill(Color.web("#FF0000"));
                 System.out.println("Quantité de Pneumophila dans l'air critique");
                 if(!toggle_Air.isSelected()){
                     toggle_Air.fire();
                 }
             }
         }else{
-            label_Pneumophila.setStyle("-fx-border-color:white; -fx-background-color: white;");
+            label_Pneumophila.setTextFill(Color.web("#FFFFFF"));
             if(toggle_Air.isSelected()){
                 toggle_Air.fire();  
             }
@@ -276,16 +275,16 @@ public class FXMLDocumentController implements Initializable {
         
         //Vérificaiton de la quantité de Listeria dans la nourriture
         if(tab[4]>200.0){
-            label_Listeria.setStyle("-fx-border-color:black; -fx-background-color: yellow;");
+            label_Listeria.setTextFill(Color.web("#FFFF00"));
             if(tab[4]>225.0){
-                label_Listeria.setStyle("-fx-border-color:black; -fx-background-color: red;");
+                label_Listeria.setTextFill(Color.web("#FF0000"));
                 System.out.println("Quantité de Listeria dans la nourriture critique");
                 if(!toggle_Food.isSelected()){
                     toggle_Food.fire();
                 }
             }
         }else{
-            label_Listeria.setStyle("-fx-border-color:white; -fx-background-color: white;");
+            label_Listeria.setTextFill(Color.web("#FFFFFF"));
             if(toggle_Food.isSelected()){
                 toggle_Food.fire();
             }
@@ -293,16 +292,16 @@ public class FXMLDocumentController implements Initializable {
         
         //Vérificaiton de la quantité de Salmonella dans la nourriture
         if(tab[5]>7.0){
-            label_Salmonella.setStyle("-fx-border-color:black; -fx-background-color: yellow;");
+            label_Salmonella.setTextFill(Color.web("#FFFF00"));
             if(tab[5]>8.0){
-                label_Salmonella.setStyle("-fx-border-color:black; -fx-background-color: red;");
+                label_Salmonella.setTextFill(Color.web("#FF0000")); 
                 System.out.println("Quantité de Salmonella dans la nourriture critique");
                 if(!toggle_Food.isSelected()){
                     toggle_Food.fire();
                 }
             }
         }else{
-            label_Salmonella.setStyle("-fx-border-color:white; -fx-background-color: white;");
+            label_Salmonella.setTextFill(Color.web("#FFFFFF")); 
             if(toggle_Food.isSelected()){
                 toggle_Food.fire();
             }
