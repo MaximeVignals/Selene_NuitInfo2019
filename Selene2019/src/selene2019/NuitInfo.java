@@ -23,9 +23,8 @@ public class NuitInfo extends Application {
         FXMLDocumentController ctrl = loader.getController();
         
         Parent root = loader.load();
+        
         Scene scene = new Scene(root);
-                
-        ctrl.serviceStart();
         stage.setScene(scene);
         stage.show();
 

@@ -16,16 +16,21 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.time.Duration;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.AnimationTimer;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.text.Font;
+import static javafx.util.Duration.seconds;
 
 
 
@@ -64,28 +69,61 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private JFXToggleButton toggle_Food;
     
+    
+  
+    //AnimationTimer permettant de refresh les données toutes les "delay" secondes
+    AnimationTimer service = new AnimationTimer() {
+        private long timestamp;
+        private long time = 0;
+        private long fraction = 0;
+        int delay = 3;
+
+        @Override
+        public void start() {
+            // current time adjusted by remaining time from last run
+            timestamp = System.currentTimeMillis() - fraction;
+            super.start();
+        }
+
+        @Override
+        public void stop() {
+            super.stop();
+            // save leftover time not handled with the last update
+            fraction = System.currentTimeMillis() - timestamp;
+        }
+
+        @Override
+        public void handle(long now) {
+            long newTime = System.currentTimeMillis();
+            if (timestamp + (delay *1000) <= newTime) {
+                long deltaT = (newTime - timestamp) / 1000;
+                time += deltaT;
+                timestamp += 1000 * deltaT;
+                updateGui();
+            }
+        }
+    };
+    
     @Override
-    public void initialize(URL url, ResourceBundle rb) {    
+    public void initialize(URL url, ResourceBundle rb) {
+        service.start();
     }
     
-    public void serviceStart(){
-         Platform.runLater(new Runnable(){
-            @Override
-            public void run(){
-                    try {
-                        consumeRest();
-                        labelDate.setText(strDate);
-                        label_Ca.setText(Calcium);
-                        label_HCO3.setText(Bicarbonate);
-                        label_Metals.setText(Metals);
-                        label_CO2.setText(Carbon_dioxide);
-                        label_O2.setText(Dioxygen);
-                        label_N2.setText(Dinitrogen);
-                    } catch (IOException ex) {
-                        Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-            }
-        });
+    public void updateGui(){
+         Platform.runLater(() -> {
+                 try {
+                     consumeRest();
+                     labelDate.setText(strDate);
+                     label_Ca.setText(Calcium);
+                     label_HCO3.setText(Bicarbonate);
+                     label_Metals.setText(Metals);
+                     label_CO2.setText(Carbon_dioxide);
+                     label_O2.setText(Dioxygen);
+                     label_N2.setText(Dinitrogen);
+                 } catch (IOException ex) {
+                     Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+                 }
+         });
     }
     
     public void consumeRest() throws MalformedURLException, IOException{
